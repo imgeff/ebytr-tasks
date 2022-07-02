@@ -10,7 +10,7 @@ const validateNewUser = async (req, _res, next) => {
   const newUser = { name, email, password };
   validateSchema(UserSchema)(newUser);
 
-  if (await userExists({ email })) NotAuthorizedError('User', 'User Already Exist');
+  if (await userExists({ email })) NotAuthorizedError('User', 'User already exists');
 
   return next();
 };
