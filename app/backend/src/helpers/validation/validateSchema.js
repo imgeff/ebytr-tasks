@@ -9,7 +9,7 @@ const schemaErrors = [
       'string.empty',
       'number.base',
       'number.min',
-      'number.max'
+      'number.max',
     ],
   },
   {
@@ -25,7 +25,7 @@ const validateSchema = (schema) => (data) => {
     const errorDetails = schemaFailed.details[0];
     const error = new Error(errorDetails.message);
 
-    const nameError = schemaErrors.find((error) => error.types.includes(errorDetails.type)).name;
+    const nameError = schemaErrors.find((err) => err.types.includes(errorDetails.type)).name;
     error.name = nameError;
     throw error;
   }

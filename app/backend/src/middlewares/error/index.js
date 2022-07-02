@@ -26,4 +26,4 @@ const errorManager = (err, _req, res, _next) => {
   return res.sendStatus(500);
 };
 
-module.exports =  { errorManager };
+module.exports = { errorManager };
