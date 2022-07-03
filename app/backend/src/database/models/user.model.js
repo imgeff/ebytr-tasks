@@ -15,7 +15,11 @@ module.exports = (sequelize, DataTypes) => {
     password: {
       type: DataTypes.STRING,
     },
-  }, { timestamps: false });
+  }, { timestamps: false, tableName: 'Users' });
+
+  User.associate = (models) => {
+    User.hasMany(models.Task, { foreignKey: 'userId' });
+  }
 
   return User;
 };
