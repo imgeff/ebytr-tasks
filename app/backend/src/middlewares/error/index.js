@@ -14,7 +14,7 @@ const errors = [
   {
     code: 409,
     types: ['ConflictError'],
-  }
+  },
 ];
 
 const errorManager = (err, _req, res, _next) => {

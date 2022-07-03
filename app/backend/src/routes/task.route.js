@@ -1,6 +1,10 @@
 const { Router } = require('express');
 const taskController = require('../controllers/task.controller');
-const { validateNewTask, validateUpdateTask, validateDeleteTask } = require('../middlewares/validation/task.validate');
+const {
+  validateNewTask,
+  validateUpdateTask,
+  validateDeleteTask,
+} = require('../middlewares/validation/task.validate');
 
 const route = Router();
 
