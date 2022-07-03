@@ -11,6 +11,10 @@ const errors = [
     code: 404,
     types: ['NotFoundError'],
   },
+  {
+    code: 409,
+    types: ['ConflictError'],
+  }
 ];
 
 const errorManager = (err, _req, res, _next) => {
