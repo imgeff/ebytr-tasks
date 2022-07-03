@@ -8,7 +8,12 @@ module.exports = (sequelize, DataTypes) => {
     name: {
       type: DataTypes.STRING,
     },
-  }, { timestamps: false, freezeTableName: true });
+  }, { timestamps: false, tableName: 'Status' });
+
+
+  Status.associate = (models) => {
+    Status.hasMany(models.Task, { foreignKey: 'statusId' });
+  }
 
   return Status;
 };
