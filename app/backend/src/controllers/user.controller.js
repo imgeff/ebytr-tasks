@@ -11,7 +11,7 @@ const create = async (req, res) => {
 
   const userCreated = await userService.create(user);
   const token = generateToken(userCreated);
-  return res.status(200).json({ ...userCreated, token });
+  return res.status(201).json({ ...userCreated, token });
 };
 
 const authenticate = async (req, res) => {
