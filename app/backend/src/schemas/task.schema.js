@@ -6,6 +6,12 @@ const NewTaskSchema = Joi.object({
   task: Joi.string().min(2).required(),
 });
 
+const UpdateTaskSchema = Joi.object({
+  taskId: Joi.number().min(1).required(),
+  statusId: Joi.number().min(1).required(),
+  task: Joi.string().min(2).required(),
+});
+
 const DeleteTaskSchema = Joi.object({
   userId: Joi.number().min(1).required(),
   taskId: Joi.number().min(1).required(),
@@ -14,4 +20,5 @@ const DeleteTaskSchema = Joi.object({
 module.exports = {
   NewTaskSchema,
   DeleteTaskSchema,
+  UpdateTaskSchema,
 };

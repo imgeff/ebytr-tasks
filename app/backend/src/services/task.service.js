@@ -6,6 +6,11 @@ const create = async (task, userId) => {
   return registerUserTask;
 }
 
+const update = async (task, taskId) => {
+  const taskUpdated = await models.Task.update(task, { where: { id: taskId } });
+  return taskUpdated;
+}
+
 const destroy = async (task) => {
   await models.Task.destroy({ where: { id: task.taskId }});
   await models.UserTask.destroy({ where: task });
@@ -14,4 +19,5 @@ const destroy = async (task) => {
 module.exports = {
   create,
   destroy,
+  update,
 }

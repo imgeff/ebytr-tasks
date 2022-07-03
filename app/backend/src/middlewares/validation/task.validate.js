@@ -2,7 +2,7 @@ require('express-async-errors');
 
 const { authenticateToken } = require('../../helpers/token/index');
 const { validateSchema } = require('../../helpers/validation/validateSchema');
-const { NewTaskSchema, DeleteTaskSchema } = require('../../schemas/task.schema');
+const { NewTaskSchema, UpdateTaskSchema, DeleteTaskSchema } = require('../../schemas/task.schema');
 
 const validateNewTask = async (req, _res, next) => {
   const { authorization: token } = req.headers;
@@ -12,6 +12,16 @@ const validateNewTask = async (req, _res, next) => {
   validateSchema(NewTaskSchema)(newTask);
 
   req.body = newTask;
+  return next();
+};
+
+const validateUpdateTask = async (req, _res, next) => {
+  const { authorization: token } = req.headers;
+  authenticateToken(token);
+  const { taskId, statusId, task } = req.body;
+  const newTask = { taskId, statusId, task };
+  validateSchema(UpdateTaskSchema)(newTask);
+
   return next();
 };
 
@@ -28,5 +38,6 @@ const validateDeleteTask = async (req, _res, next) => {
 
 module.exports = {
   validateNewTask,
+  validateUpdateTask,
   validateDeleteTask,
 };
