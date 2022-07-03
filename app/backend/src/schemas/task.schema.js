@@ -6,7 +6,12 @@ const NewTaskSchema = Joi.object({
   task: Joi.string().min(2).required(),
 });
 
+const DeleteTaskSchema = Joi.object({
+  userId: Joi.number().min(1).required(),
+  taskId: Joi.number().min(1).required(),
+});
 
 module.exports = {
   NewTaskSchema,
+  DeleteTaskSchema,
 };

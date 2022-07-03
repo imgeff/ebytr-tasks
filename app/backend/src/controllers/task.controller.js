@@ -7,6 +7,14 @@ const create = async (req, res) => {
   return res.status(201).json(taskCreated);
 }
 
+const destroy = async (req, res) => {
+  const { userId, taskId } = req.body;
+  const task = { userId, taskId };
+  await taskService.destroy(task);
+  return res.sendStatus(204);
+}
+
 module.exports = {
   create,
+  destroy,
 }
