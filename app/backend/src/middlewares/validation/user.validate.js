@@ -1,6 +1,6 @@
 require('express-async-errors');
 
-const { NotAuthorizedError } = require('../../helpers/error/customError');
+const { ConflictError } = require('../../helpers/error/customError');
 const { userExists } = require('../../helpers/validation/userExists');
 const { validateSchema } = require('../../helpers/validation/validateSchema');
 const { UserSchema, LoginSchema } = require('../../schemas/user.schema');
@@ -10,7 +10,7 @@ const validateNewUser = async (req, _res, next) => {
   const newUser = { name, email, password };
   validateSchema(UserSchema)(newUser);
 
-  if (await userExists({ email })) NotAuthorizedError('User', 'User already exists');
+  if (await userExists({ email })) ConflictError('User');
 
   return next();
 };
