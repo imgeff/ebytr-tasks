@@ -1,4 +1,14 @@
+require('express-async-errors');
+
+const {authenticateToken}=require('../helpers/token');
 const taskService = require('../services/task.service');
+
+const getAllFromUser = async (req, res) => {
+  const { authorization: token } = req.headers;
+  const { id: userId } = authenticateToken(token);
+  const tasks = await taskService.getAllFromUser(userId);
+  return res.status(200).json(tasks);
+}
 
 const create = async (req, res) => {
   const { userId, statusId, task } = req.body;
@@ -25,4 +35,5 @@ module.exports = {
   create,
   update,
   destroy,
+  getAllFromUser,
 }

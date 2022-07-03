@@ -4,6 +4,8 @@ const { validateNewTask, validateUpdateTask, validateDeleteTask } = require('../
 
 const route = Router();
 
+route.get('/', taskController.getAllFromUser);
+
 route.post('/', validateNewTask, taskController.create);
 
 route.put('/', validateUpdateTask, taskController.update);

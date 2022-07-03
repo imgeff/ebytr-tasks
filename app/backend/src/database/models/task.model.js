@@ -5,6 +5,10 @@ module.exports = (sequelize, DataTypes) => {
       primaryKey: true,
       autoIncrement: true,
     },
+    userId: {
+      type: DataTypes.INTEGER,
+      foreignKey: true,
+    },
     statusId: {
       type: DataTypes.INTEGER,
       foreignKey: true,
@@ -16,6 +20,7 @@ module.exports = (sequelize, DataTypes) => {
 
   Task.associate = (models) => {
     Task.belongsTo(models.Status, { foreignKey: 'statusId', as: 'status' });
+    Task.belongsTo(models.User, { foreignKey: 'userId', as: 'user' });
   };
 
   return Task;

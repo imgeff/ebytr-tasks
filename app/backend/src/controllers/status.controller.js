@@ -1,3 +1,5 @@
+require('express-async-errors');
+
 const statusService = require('../services/status.service');
 
 const getAll = async (_req, res) => {

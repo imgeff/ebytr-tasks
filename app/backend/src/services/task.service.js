@@ -1,5 +1,27 @@
 const models = require('../database/models');
 
+const getAllFromUser = async (userId) => {
+  const tasks = await models.Task.findAll({
+    include: [
+      {
+        as: 'user',
+        model: models.User,
+        attributes: { exclude: ['id', 'email', 'password'] },
+      },
+      {
+        as: 'status',
+        model: models.Status,
+        attributes: { exclude: ['id'] },
+      },
+    ],
+    attributes: { exclude: ['userId', 'statusId'] },
+    raw: true,
+    where: { userId },
+  });
+
+  return tasks;
+}
+
 const create = async (task, userId) => {
   const { dataValues: { id }} = await models.Task.create(task);
   const registerUserTask = await models.UserTask.create({ userId, taskId: id });
@@ -20,4 +42,5 @@ module.exports = {
   create,
   destroy,
   update,
+  getAllFromUser,
 }
