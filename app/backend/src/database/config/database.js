@@ -13,20 +13,20 @@ module.exports = {
     password: MYSQL_PASSWORD,
     database: MYSQL_DATABASE,
     host: HOSTNAME,
-    dialect: 'mysql',
+    dialect: 'postgres',
   },
   test: {
     username: MYSQL_USER,
     password: MYSQL_PASSWORD,
     database: MYSQL_DATABASE,
     host: HOSTNAME,
-    dialect: 'mysql',
+    dialect: 'postgres',
   },
   production: {
     username: MYSQL_USER,
     password: MYSQL_PASSWORD,
     database: MYSQL_DATABASE,
     host: HOSTNAME,
-    dialect: 'mysql',
+    dialect: 'postgres',
   },
 };
