@@ -6,7 +6,7 @@
   "scripts": {
     "start": "node src/server.js",
     "dev": "nodemon  src/server.js",
-    "test": "mocha ./src/tests/*$NAME*.{test,spec}.js -t 10000 --exit",
+    "test": "mocha ./src/tests/**/*$NAME*.{test,spec}.js -t 10000 --exit",
     "test:coverage": "nyc npm run test"
   },
   "keywords": [],
