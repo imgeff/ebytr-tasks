@@ -1,0 +1,43 @@
+#task-form {
+  @apply
+    h-28
+    bg-sky-50
+    flex
+    items-center
+    justify-center
+  ;
+}
+
+#task-form-content {
+  @apply
+    flex
+    items-end
+    justify-center
+    gap-5
+  ;
+}
+
+.task-label {
+  @apply
+    flex
+    flex-col
+    gap-1
+  ;
+}
+
+.task-label span {
+  @apply
+    text-start
+    pl-2
+    font-semibold
+  ;
+}
+
+.input {
+  @apply
+    daisy-input
+    daisy-input-bordered
+    w-full
+    max-w-xs
+  ;
+}
