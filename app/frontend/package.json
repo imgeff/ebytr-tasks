@@ -3,8 +3,9 @@
   "private": true,
   "version": "0.0.0",
   "scripts": {
+    "start": "vite",
     "dev": "vite",
-    "build": "tsc && vite build",
+    "build": "vite build",
     "preview": "vite preview"
   },
   "dependencies": {
@@ -12,7 +13,8 @@
     "daisyui": "^2.15.4",
     "phosphor-react": "^1.4.1",
     "react": "^18.0.0",
-    "react-dom": "^18.0.0"
+    "react-dom": "^18.0.0",
+    "react-router-dom": "5.2.0"
   },
   "devDependencies": {
     "@types/react": "^18.0.0",
