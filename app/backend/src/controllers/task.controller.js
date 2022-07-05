@@ -12,8 +12,8 @@ const getAllFromUser = async (req, res) => {
 
 const create = async (req, res) => {
   const { userId, statusId, task } = req.body;
-  const newTask = { statusId, task };
-  const taskCreated = await taskService.create(newTask, userId);
+  const newTask = { userId, statusId, task };
+  const taskCreated = await taskService.create(newTask);
   return res.status(201).json(taskCreated);
 };
 

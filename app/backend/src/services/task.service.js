@@ -22,10 +22,9 @@ const getAllFromUser = async (userId) => {
   return tasks;
 };
 
-const create = async (task, userId) => {
-  const { dataValues: { id } } = await models.Task.create(task);
-  const registerUserTask = await models.UserTask.create({ userId, taskId: id });
-  return registerUserTask;
+const create = async (task) => {
+  const taskCreated = await models.Task.create(task);
+  return taskCreated;
 };
 
 const update = async (task, taskId) => {
@@ -35,7 +34,6 @@ const update = async (task, taskId) => {
 
 const destroy = async (task) => {
   await models.Task.destroy({ where: { id: task.taskId } });
-  await models.UserTask.destroy({ where: task });
 };
 
 module.exports = {
