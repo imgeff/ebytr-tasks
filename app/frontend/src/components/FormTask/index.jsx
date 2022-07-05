@@ -1,10 +1,11 @@
 import { useState, useEffect } from 'react';
-import { getStatus } from '../../services/API/request';
+import { addTask, getStatus } from '../../services/API/request';
+import PropTypes from 'prop-types';
 import './style.css';
 
 const defaultStatus = { id: 0, name: 'Qual é o status da tarefa?' };
 
-export function FormTask() {
+export function FormTask({ token }) {
   const [task, setTask] = useState('');
   const [statusSelected, setStatusSelected] = useState(defaultStatus);
   const [statusList, setStatusList] = useState([]);
@@ -24,10 +25,10 @@ export function FormTask() {
   const createTask = (event) => {
     event.preventDefault();
     const { id: statusId } = statusSelected;
-    const newTask = { userId: 1, statusId, task };
-    // enviar para a API e armazenar localmente
+    const newTask = { statusId, task };
     setTask('');
     setStatusSelected(defaultStatus);
+    addTask(newTask, token);
   };
 
   return(
@@ -64,4 +65,6 @@ export function FormTask() {
   );
 }
 
-
+FormTask.propTypes = {
+  token: PropTypes.string.isRequired,
+};
