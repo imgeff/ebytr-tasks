@@ -3,9 +3,8 @@ import { BoardTask } from '../components/BoardTask';
 import { FormTask } from '../components/FormTask';
 import {getTasks} from '../services/API/request';
 
-const token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjU2OTk0MTM0LCJleHAiOjE2NTcwMDQ5MzR9.juum5qlIkhIk_LcIRLZMDF56RV-t1rv1wy0NEBVFmyE';
-
 export function Task() {
+  const token = localStorage.getItem('token');
   const [taskList, setTaskList] = useState([]);
 
   useEffect(() => {

@@ -1,0 +1,77 @@
+#form-login {
+  @apply
+    w-[45rem]
+    px-10
+    py-20
+    flex
+    flex-col
+    gap-5
+    items-center
+    justify-center
+    rounded-3xl
+    border-2
+    border-sky-200
+    shadow-md
+    shadow-sky-100
+  ;
+}
+
+#login-box {
+  @apply
+    h-[100vh]
+    flex
+    items-center
+    justify-center
+    bg-sky-50
+  ;
+}
+
+.login-label {
+  @apply
+    w-4/5
+    flex
+    flex-col
+    gap-1
+  ;
+}
+
+.login-label span {
+  @apply
+    pl-1
+    font-bold
+  ;
+}
+
+.input-login {
+  @apply
+  daisy-input
+  daisy-input-bordered
+  w-full;
+}
+
+#form-btn {
+  @apply
+    flex
+    flex-wrap
+    justify-center
+    items-center
+    gap-4
+  ;
+}
+
+#register-btn {
+  @apply
+    px-20
+    daisy-btn
+    daisy-btn-accent
+  ;
+}
+
+#login-btn {
+  @apply
+    px-20
+    daisy-btn
+    daisy-btn-info
+    hover:bg-sky-300
+  ;
+}
