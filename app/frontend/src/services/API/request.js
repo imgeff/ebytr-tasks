@@ -23,7 +23,6 @@ export const getTasks = async (token) => {
     return response;
   } catch (error) {
     console.error;
-    // return defaultStatusList;
   }
 };
 
@@ -41,4 +40,25 @@ export const addTask = async (task, token) => {
   }
 };
 
+export const userLogin = async (user) => {
+  try {
+    const url = 'https://ebytr-tasks.herokuapp.com/users/login';
+    const response = await axios.post(url, user);
+    return response;
+  } catch (error) {
+    console.error(error);
+    return error.response;
+  }
+};
+
+export const userRegister = async (user) => {
+  try {
+    const url = 'https://ebytr-tasks.herokuapp.com/users';
+    const response = await axios.post(url, user);
+    return response;
+  } catch (error) {
+    console.error(error);
+    return error.response;
+  }
+};
 
