@@ -26,7 +26,6 @@ export function FormLogin() {
       } else {
         localStorage.setItem('token', data.token);
         history.push('/tasks');
-        location.reload();
       }
     });
   };
@@ -42,7 +41,6 @@ export function FormLogin() {
         } else {
           localStorage.setItem('token', data.token);
           history.push('/tasks');
-          location.reload();
         }
       });
     }
