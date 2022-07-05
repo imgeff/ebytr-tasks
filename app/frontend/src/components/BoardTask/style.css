@@ -1,0 +1,87 @@
+#board-tasks {
+  @apply
+    w-full
+    pb-10
+    px-5
+    flex
+    flex-col
+    items-center
+    justify-start
+  ;
+}
+
+#board-tasks-header {
+  @apply
+    w-full
+    flex
+    justify-center
+    items-center
+    gap-1
+  ;
+}
+
+#board-tasks-header h2 {
+  @apply
+    w-full
+    p-3
+    font-bold
+    bg-sky-200
+    text-[#0b2545]
+    border-2
+    border-b-0
+    border-[#0b2545]
+    rounded-t-xl
+  ;
+}
+
+#board-tasks-body {
+  @apply
+    w-full
+    h-full
+    min-h-full
+    flex
+    justify-center
+    items-center
+    gap-1
+  ;
+}
+
+.board-content {
+  @apply
+    w-full
+    h-full
+    p-1
+    min-h-[70vh]
+    flex
+    flex-col
+    gap-1
+    bg-sky-200
+    border-2
+    border-[#0b2545]
+    rounded-b-xl
+  ;
+}
+
+.board-card {
+  @apply
+    w-full
+    min-h-12
+    flex
+    flex-col
+    justify-center
+    items-center
+    border-2
+    border-[#0b2545]
+    bg-sky-500
+    rounded-lg
+  ;
+}
+
+.board-card p {
+  letter-spacing: 0.5px;
+  @apply
+    text-sm
+    font-bold
+    text-[#0b2545]
+  ;
+}
